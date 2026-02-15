@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>♥</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cairo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{-webkit-overflow-scrolling:touch;}
+:root{--vh:1vh;}
+body{
+  height: calc(var(--vh,1vh) * 100);
+  font-family:'Cairo',sans-serif;
+  background:#0a0000;
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+
+/* ===== الصفحة الأولى ===== */
+.top-name{
+  position:absolute;top:clamp(30px,5vh,60px);
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(2.8rem,10vw,5rem);
+  color:#ff9999;letter-spacing:4px;width:100%;text-align:center;z-index:20;
+  animation:softGlow 5s ease-in-out infinite alternate;
+}
+@keyframes softGlow{0%{text-shadow:0 0 20px rgba(255,153,153,0.8);}100%{text-shadow:0 0 50px rgba(255,153,153,1);}}
+.screen-1,.screen-2,.screen-3{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+}
+.screen-1{background:linear-gradient(135deg,#2c0000,#4a0000,#800000);z-index:3;}
+.heart-container{position:relative;text-align:center;}
+.locked-heart{
+  font-size:clamp(380px,90vmin,500px);color:#ff2d55;
+  filter:drop-shadow(0 0 90px rgba(255,45,85,0.7));
+  animation:heartBeat 1.5s infinite alternate,sway 4s ease-in-out infinite,glowHeart 2s ease-in-out infinite alternate;
+}
+@keyframes heartBeat{0%{transform:scale(1) rotate(0deg);}50%{transform:scale(1.08) rotate(-5deg);}100%{transform:scale(1) rotate(0deg);}}
+@keyframes sway{0%{transform:translateX(0) rotate(0deg);}25%{transform:translateX(-3px) rotate(-2deg);}50%{transform:translateX(3px) rotate(2deg);}75%{transform:translateX(-2px) rotate(-1deg);}100%{transform:translateX(0) rotate(0deg);}}
+@keyframes glowHeart{0%{filter:drop-shadow(0 0 50px rgba(255,45,85,0.5));}100%{filter:drop-shadow(0 0 120px rgba(255,45,85,1));}}
+.locked-lock{
+  font-size:clamp(100px,28vmin,140px);color:#fff9;position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);text-shadow:0 0 20px #000;opacity:0;
+  animation:lockReveal 2s ease-out forwards 0.5s, lockPulse 1.5s 2.5s infinite, sway 5s ease-in-out infinite;
+}
+@keyframes lockReveal{0%{opacity:0;transform:translate(-50%,-50%) scale(0.6) rotate(-20deg);}70%{opacity:1;transform:translate(-50%,-50%) scale(1.15) rotate(5deg);}100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg);}}
+@keyframes lockPulse{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.05);}}
+input{
+  position:absolute;bottom:clamp(60px,10vh,100px);left:50%;transform:translateX(-50%);
+  width:clamp(280px,80vw,380px);font-size:clamp(1.5rem,6vw,2rem);
+  padding:clamp(18px,6vw,28px) 32px;border:none;border-radius:999px;text-align:center;
+  background:rgba(255,255,255,0.15);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  outline:none;box-shadow:0 10px 35px rgba(0,0,0,0.4);color:#fff;z-index:10;
+}
+input:focus{background:rgba(255,255,255,0.3);box-shadow:0 0 0 8px rgba(255,45,85,0.4);transform:translateX(-50%) scale(1.05);}
+input::placeholder{color:rgba(255,255,255,0.6);}
+
+/* ===== الشاشة الثانية ===== */
+.screen-2{justify-content:flex-start;padding:clamp(30px,6vw,60px) 20px;overflow:hidden;opacity:0;z-index:2;animation:grad2 20s infinite alternate linear;}
+.show-screen2 .screen-2{opacity:1;z-index:3;}
+@keyframes grad2{0%{background:linear-gradient(135deg,#0a0a0a,#111,#1a1a1a);}50%{background:linear-gradient(135deg,#111,#1a1a1a,#2a2a2a);}100%{background:linear-gradient(135deg,#1a1a1a,#2a2a2a,#111);}}
+.anniversary-title{font-family:'Great Vibes',cursive;font-size:clamp(2.5rem,9vw,3.8rem);color:#ff9999;margin-bottom:clamp(15px,4vh,35px);text-shadow:0 0 40px rgba(255,153,153,0.6);}
+.timer-container{display:flex;flex-wrap:nowrap;justify-content:center;gap:clamp(4px,1.2vw,8px);max-width:95%;margin:10px 0;}
+.timer-unit{background:rgba(30,30,30,0.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:10px;padding:clamp(6px,2vw,10px) clamp(10px,3vw,14px);min-width:clamp(50px,12vw,70px);text-align:center;transition:all 0.4s ease;}
+.timer-unit .value{font-size:clamp(1.2rem,4vw,1.8rem);font-weight:700;color:#ff9999;display:block;margin-bottom:2px;text-shadow:0 0 8px rgba(255,153,153,0.5);}
+.timer-unit .label{font-size:clamp(0.65rem,2vw,0.85rem);color:#ccc;opacity:0.7;}
+.heart-separator{font-size:clamp(1.2rem,4vw,1.8rem);color:#ff5252;margin:0 4px;animation:beat 1.5s infinite;align-self:center;}
+@keyframes beat{0%,100%{transform:scale(1);}50%{transform:scale(1.15);}}
+.msg-content{background:rgba(30,30,30,0.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:18px;padding:18px 24px;font-size:1.3rem;line-height:1.8;color:#ffeeee;text-shadow:0 1px 10px rgba(0,0,0,0.7);max-width:90%;margin:10px auto;opacity:0;transform:scale(0.85) translateY(15px);max-height:0;overflow:hidden;transition:all 0.8s cubic-bezier(0.34,1.56,0.64,1);}
+.msg-content.active{opacity:1;transform:scale(1) translateY(0);max-height:500px;margin:20px auto;}
+.photo-frame img{width:100%;height:auto;max-height:200px;border-radius:28px;object-fit:cover;transition:transform 0.5s ease;}
+
+/* ===== الشاشة الثالثة ===== */
+.screen-3{justify-content:flex-start;padding:clamp(30px,6vw,60px) 20px;overflow-y:auto;opacity:0;z-index:1;animation:grad3 25s infinite alternate linear;}
+.show-screen3 .screen-3{opacity:1;z-index:3;}
+@keyframes grad3{0%{background:linear-gradient(135deg,#2c001a,#4a002e,#80004d);}50%{background:linear-gradient(135deg,#4a002e,#80004d,#2c001a);}100%{background:linear-gradient(135deg,#80004d,#2c001a,#4a002e);}}
+.images-container img{width:100%;border-radius:20px;margin-bottom:10px;}
+.images-container .image-text{color:#ffeeee;font-size:1rem;text-align:center;margin-bottom:20px;}
+
+/* القلوب الطائرة */
+.floating-heart{position:absolute;font-size:clamp(1.5rem,5vw,2.5rem);color:rgba(255,82,82,0.7);pointer-events:none;z-index:5;text-shadow:0 0 10px rgba(255,82,82,0.5);animation:floatHeart linear infinite;}
+@keyframes floatHeart{0%{transform:translateY(100vh) rotate(0deg) scale(0.6);opacity:0;}20%{opacity:0.8;transform:translateY(60vh) rotate(45deg) scale(0.9);}50%{opacity:1;transform:translateY(10vh) rotate(180deg) scale(1.1);}80%{opacity:0.7;transform:translateY(-20vh) rotate(360deg) scale(0.8);}100%{transform:translateY(-60vh) rotate(540deg) scale(0.6);opacity:0;}}
+
+/* زر الصوت */
+.sound-toggle{position:fixed;bottom:15px;right:15px;width:42px;height:42px;border-radius:50%;background:#0008;color:#fff;font-size:1.2rem;z-index:50;}
+</style>
+</head>
+<body>
+
+<div class="screen-1">
+  <div class="top-name">إلى حبيبة قلبي رهف</div>
+  <div class="heart-container">
+    <div class="locked-heart">♥</div>
+    <div class="locked-lock">🔒</div>
+  </div>
+  <input type="password" id="pass" placeholder="أحلى تاريخ بحياتك">
+</div>
+
+<div class="screen-2">
+  <div class="anniversary-title">من يوم ما حبيتك ❤️🌹🫶</div>
+  <div class="timer-container" id="timer"></div>
+  <div class="photo-frame"><img src="https://i.postimg.cc/ykG9qQct/image.jpg"></div>
+  <div class="love-buttons">
+    <button onclick="toggleMsg('msg1')">❤️</button>
+    <button onclick="toggleMsg('msg2')">🌹</button>
+    <button onclick="toggleMsg('msg3')">🫶</button>
+  </div>
+  <div id="msg1" class="msg-content">أنتي البنت يلي عرفتني شو يعني حب</div>
+  <div id="msg2" class="msg-content">مهما طال الزمن قلبي بيتخلاش عنك يبعد عمري</div>
+  <div id="msg3" class="msg-content">بحبك وبحب تفاصيلك يبنت قلبي</div>
+  <button id="goBtn">تعالي</button>
+</div>
+
+<div class="screen-3">
+  <div class="anniversary-title">ذكرياتنا الجميلة 💖</div>
+  <button id="addImageBtn">➕ أضف صورة جديدة</button>
+  <div class="images-container" id="imagesContainer"></div>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="https://files.catbox.moe/y3jqn5.mp3" type="audio/mpeg">
+</audio>
+<button class="sound-toggle" id="soundBtn" onclick="toggleSound()">🔊</button>
+
+<script>
+// تصحيح ارتفاع الشاشة
+function setVh(){
+  document.documentElement.style.setProperty('--vh', window.innerHeight*0.01 + 'px');
+}
+window.addEventListener('resize', setVh);
+setVh();
+
+// كلمة السر
+const passInput = document.getElementById("pass");
+passInput.addEventListener("input", function(){
+  if(this.value.trim()==="22/2"){
+    document.body.classList.add("opened","show-screen2"); playMusic();
+  }
+});
+passInput.addEventListener("keypress", function(e){
+  if(e.key==="Enter"){ e.preventDefault();
+    if(this.value.trim()==="22/8"){ document.body.classList.add("opened","show-screen2"); playMusic(); }
+  }
+});
+
+// المؤقت
+const startDate=new Date("2025-02-22T00:00:00");
+const timerEl=document.getElementById("timer");
+function updateTimer(){
+  const now=new Date();
+  const diff=now-startDate;
+  const days=Math.floor(diff/(1000*60*60*24));
+  const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+  const seconds=Math.floor((diff%(1000*60))/1000);
+  timerEl.innerHTML=`<div class="timer-unit"><span class="value">${days}</span><span class="label">يوم</span></div><span class="heart-separator">♥</span><div class="timer-unit"><span class="value">${hours}</span><span class="label">ساعة</span></div><span class="heart-separator">♥</span><div class="timer-unit"><span class="value">${minutes}</span><span class="label">دقيقة</span></div><span class="heart-separator">♥</span><div class="timer-unit"><span class="value">${seconds}</span><span class="label">ثانية</span></div>`;
+}
+setInterval(updateTimer,1000);
+updateTimer();
+
+// الرسائل
+function toggleMsg(id){
+  document.querySelectorAll('.msg-content').forEach(m=>m.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// الصوت
+const audio=document.getElementById("bgMusic");
+function playMusic(){
+  audio.play().catch(()=>{
+    const touchHandler = () => { audio.play(); document.removeEventListener('touchstart', touchHandler); };
+    document.addEventListener('touchstart', touchHandler, {once:true});
+  });
+}
+function toggleSound(){
+  if(audio.paused){ audio.play(); document.getElementById("soundBtn").textContent="🔊"; }
+  else{ audio.pause(); document.getElementById("soundBtn").textContent="🔇"; }
+}
+
+// زر الانتقال للصفحة 3
+document.getElementById("goBtn").addEventListener("click",()=>{
+  document.body.classList.remove("show-screen2");
+  document.body.classList.add("show-screen3");
+});
+
+// القلوب الطائرة
+function createFloatingHeart(screen=".screen-2"){
+  const heart=document.createElement("div");
+  heart.className="floating-heart"; heart.innerHTML="♥";
+  heart.style.fontSize=(Math.random()*1.2+1.2)+"rem";
+  heart.style.left=Math.random()*100+"%";
+  const duration=(Math.random()*12+16)+"s"; heart.style.animationDuration=duration;
+  heart.style.animationDelay=Math.random()*8+"s";
+  document.querySelector(screen).appendChild(heart);
+  setTimeout(()=>heart.remove(),parseFloat(duration)*1000+3000);
+}
+setInterval(()=>{createFloatingHeart(".screen-2"); createFloatingHeart(".screen-3");},1500);
+
+// الصور من الجهاز - صفحة 3
+const addImageBtn=document.getElementById("addImageBtn");
+const imagesContainer=document.getElementById("imagesContainer");
+let imagesData = JSON.parse(localStorage.getItem("imagesData")) || [];
+
+function renderImages(){
+  imagesContainer.innerHTML="";
+  imagesData.forEach(item=>{
+    const imgEl = document.createElement("img"); imgEl.src = item.img;
+    imgEl.alt = "صورة ذكرى"; imgEl.style.width = "100%";
+    imgEl.style.borderRadius = "20px"; imgEl.style.marginBottom = "10px";
+
+    const textEl = document.createElement("div"); textEl.textContent = item.text;
+    textEl.className = "image-text";
+
+    imagesContainer.appendChild(imgEl); imagesContainer.appendChild(textEl);
+  });
+  localStorage.setItem("imagesData", JSON.stringify(imagesData));
+}
+
+addImageBtn.addEventListener("click", ()=>{
+  const inputFile = document.createElement("input"); inputFile.type="file"; inputFile.accept="image/*";
+  inputFile.onchange = e=>{
+    const file = e.target.files[0]; if(!file) return;
+    const reader = new FileReader();
+    reader.onload = ()=>{
+      const text = prompt("أدخل رسالة الحب لهذه الصورة:") || "";
+      imagesData.push({img: reader.result, text});
+      renderImages();
+    };
+    reader.readAsDataURL(file);
+  };
+  inputFile.click();
+});
+renderImages();
+</script>
+</body>
+</html>
